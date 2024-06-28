@@ -5,6 +5,8 @@ import com.yayu.springbootmall.dto.ProductRequest;
 import com.yayu.springbootmall.model.Product;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 public interface ProductService {
     Product getProductById(Integer productId);
 
@@ -13,6 +15,8 @@ public interface ProductService {
     void updateProduct(Integer productId, ProductRequest productRequest);
 
     void deleteProductById(Integer productId);
+
+    List<Product> getProducts();
 
 
 }
