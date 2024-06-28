@@ -1,5 +1,6 @@
 package com.yayu.springbootmall.dao;
 
+import com.yayu.springbootmall.ProductCategory;
 import com.yayu.springbootmall.dto.ProductRequest;
 import com.yayu.springbootmall.model.Product;
 
@@ -15,6 +16,6 @@ public interface ProductDao {
 
     void deleteProductById(Integer productId);
 
-    List<Product> getProducts();
+    List<Product> getProducts(ProductCategory category,String search);
 
 }
