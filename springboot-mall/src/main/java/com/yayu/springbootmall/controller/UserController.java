@@ -1,5 +1,6 @@
 package com.yayu.springbootmall.controller;
 
+import com.yayu.springbootmall.dto.UserLoginResquest;
 import com.yayu.springbootmall.dto.UserRegisterRequest;
 import com.yayu.springbootmall.model.User;
 import com.yayu.springbootmall.service.UserService;
@@ -22,7 +23,12 @@ public class UserController {
         Integer userId = userService.register(userRegisterRequest);
         User user = userService.getUserById(userId);
         return ResponseEntity.status(HttpStatus.CREATED).body(user);
+    }
 
+    @PostMapping("/users/login")
+    public ResponseEntity<User> login(@RequestBody @Valid UserLoginResquest userLoginResquest){
 
+        User user = userService.login(userLoginResquest);
+        return ResponseEntity.status(HttpStatus.OK).body(user);
     }
 }
